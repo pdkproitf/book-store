@@ -5,6 +5,8 @@ class CreateBooks < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.integer :publish_id
+      t.float :cost
+      t.float :sale
       t.string :photo
       t.text :content
       t.float :weight
