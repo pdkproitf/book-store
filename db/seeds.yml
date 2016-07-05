@@ -1,0 +1,71 @@
+categories_list:
+-
+  name: "Sach Van"
+-
+  name: "Sach Toan"
+-
+  name: "Sach Ly"
+-
+  name: "Sach Hoa"
+
+publishs_list:
+-
+  name: "nsx Thieu nhi"
+-
+  name: "nsx Nhi dong"
+-
+  name: "nsx Hoan hoa"
+-
+  name: "nsx Huyet nguyet"
+
+books_list:
+-
+  category_id: 1
+  title: 'Fifty Shades Darker'
+  author: 'Nguyen Van A'
+  publish_id: 1
+  cost: 120000
+  sale: 0
+  photo: "book-1.gpj"
+  content: "Daunted by the singular tastes and dark secrets of the handsome,
+               tormented young entrepreneur Christian Grey, Anastasia Steele has
+               broken off their relationship to start a new career with a Seattle
+               Independent Publishing House (SIP); but desire for Christian still
+               dominates her every waking thought, and when he proposes a new arrangement,
+                Anastasia cannot resist. They rekindle their searing sexual affair, and
+                 Anastasia learns more about the harrowing past of her damaged,
+                 driven and demanding Fifty Shades. While Christian wrestles with
+                 his inner demons, Anastasia must confront the anger and envy of
+                 the women who came before her, and make the most important decision
+                 of her life.
+              Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex.
+               Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis.
+                In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus,
+                 non malesuada sem accumsan in. Morbi vel sodales libero."
+
+  pages: 120
+-
+  category_id: 2
+  title: 'Fifty Shades Succer'
+  author: 'Nguyen Van B'
+  publish_id: 2
+  cost: 120000
+  sale: 0
+  photo: "book-2.gpj"
+  content: "Daunted by the singular tastes and dark secrets of the handsome,
+               tormented young entrepreneur Christian Grey, Anastasia Steele has
+               broken off their relationship to start a new career with a Seattle
+               Independent Publishing House (SIP); but desire for Christian still
+               dominates her every waking thought, and when he proposes a new arrangement,
+                Anastasia cannot resist. They rekindle their searing sexual affair, and
+                 Anastasia learns more about the harrowing past of her damaged,
+                 driven and demanding Fifty Shades. While Christian wrestles with
+                 his inner demons, Anastasia must confront the anger and envy of
+                 the women who came before her, and make the most important decision
+                 of her life.
+              Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex.
+               Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis.
+                In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus,
+                 non malesuada sem accumsan in. Morbi vel sodales libero."
+
+  pages: 120
