@@ -14,7 +14,7 @@ RSpec.describe Category, type: :model do
   end
 
   describe "association" do
-    it { is_expected.to have_many(:books) }
+    it { expect(@category).to have_many(:books).dependent(:destroy) }
   end
 
 end
