@@ -1,3 +1,7 @@
 class Category < ActiveRecord::Base
-  have_many :books, dependent :destroy
+  has_many :books, dependent: :destroy
+  validates :name,  presence: true,
+                    length: { maximum: 50,
+                              message: "can't be longer than 50 characters" },
+                    uniqueness: true
 end
