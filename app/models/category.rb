@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
                     length: { maximum: 50,
                               message: "can't be longer than 50 characters" },
                     uniqueness: true
+
+
 end

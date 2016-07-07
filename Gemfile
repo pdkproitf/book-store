@@ -55,4 +55,6 @@ group :development do
   gem 'autoprefixer-rails'
   #font awesome - using icon: user - card - checkout  . . .
   gem "font-awesome-rails"
+  #for zome image
+  gem 'elevatezoom-rails'
 end
