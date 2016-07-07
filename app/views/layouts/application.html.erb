@@ -4,7 +4,7 @@
 
     <% if current_user %>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <li><%= link_to "Edit", edit_user_password_path, method: :get %></li>
+      <li><%= link_to "Edit", edit_user_registration_path, method: :get %></li>
       <div class='btn-group pull-right right-nav'>
          <button type="button" class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
            <span class="caret"></span>
