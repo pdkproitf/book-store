@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe BooksController do
 #*******************************************************************************
-  let(:book) { FactoryGirl.create(:book) }
+  let(:book) { create(:book) }
 #*****************************************************************************
   describe "GET #index" do
 
@@ -19,6 +19,7 @@ describe BooksController do
 
 #*******************************************************************************
   describe "GET #show" do
+
     it "assigns the requested book to @book" do
       book = FactoryGirl.create(:book)
       get :show, id: book
@@ -83,7 +84,7 @@ describe BooksController do
 
     it "deletes the book" do
       expect{
-        delete :destroy, :id => @book
+        delete :destroy, id: @book
      }.to change(Book, :count).by(-1)
     end
 
