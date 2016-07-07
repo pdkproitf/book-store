@@ -1,0 +1,19 @@
+current directory: /home/pdkpro/Desktop/RubyProject/BookStore_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+/home/pdkpro/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20160706-15710-1astkov.rb extconf.rb
+creating Makefile
+
+current directory: /home/pdkpro/Desktop/RubyProject/BookStore_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/pdkpro/Desktop/RubyProject/BookStore_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling context.c
+compiling breakpoint.c
+compiling byebug.c
+compiling threads.c
+compiling locker.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/pdkpro/Desktop/RubyProject/BookStore_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20160706-15710-74ns0r/byebug
