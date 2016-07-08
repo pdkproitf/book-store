@@ -8,7 +8,7 @@ FactoryGirl.define do
     publish_id { Faker::Number.number(2) }
     cost { Faker::Number.decimal(2) }
     sale { Faker::Number.between(0, 0.5) }
-    photo { Faker::Avatar.image }
+    photo { Faker::Avatar.image("my-own-slug", "500x500") }
     content { Faker::Hipster.paragraph }
     weight {  Faker::Number.decimal(2) }
     size { Faker::Number.number(2) }

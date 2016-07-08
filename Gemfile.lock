@@ -64,6 +64,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    elevatezoom-rails (1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -211,7 +212,11 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
+<<<<<<< HEAD
+  elevatezoom-rails
+=======
   devise
+>>>>>>> master
   factory_girl_rails
   faker
   font-awesome-rails

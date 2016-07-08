@@ -39,6 +39,7 @@ RSpec.describe Book, type: :model do
   describe " associate " do
     it { expect(@book).to belong_to(:category) }
     it { expect(@book).to belong_to(:publish) }
+    it { expect(@book).to have_many(:comments).dependent(:destroy) }
   end
 
 end

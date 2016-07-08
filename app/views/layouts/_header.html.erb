@@ -71,10 +71,10 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="<%= books_path() %>">Shop Book</a></li>
-          <li><a href="#">Single product</a></li>
-          <li><a href="#">Cart</a></li>
+          <li><a href="#">Home</a></li>
+          <li class="<%= 'active' if current_page?(books_path()) %>"><%= link_to 'Shop Book', books_path() %></li>
+          <li class="<%= 'active' if current_page?(categories_path()) %>"><%= link_to 'Categorys', categories_path() %></li>
+          <li class="<%= 'active' if current_page?(publishes_path()) %>"><%= link_to 'Publish', publishes_path() %></li>
           <li><a href="#">Checkout</a></li>
           <li><a href="#">Category</a></li>
           <li><a href="#">Others</a></li>
