@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :category
   belongs_to :publish
-  has_many :comments, dependent: :destroy
+  has_many :comments
   validates :title, presence: true,
                     length: { maximum: 500 }
   validates :cost, presence:true,

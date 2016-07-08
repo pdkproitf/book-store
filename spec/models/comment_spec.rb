@@ -48,4 +48,9 @@ RSpec.describe Comment, type: :model do
 
   end
 
+  describe "sossiation" do
+    it { expect(comment).to belong_to(:book) }
+    it { expect(comment).to belong_to(:user) }
+  end
+
 end
