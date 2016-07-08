@@ -1,45 +1,4 @@
-<<<<<<< HEAD
-<div class="container">
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Home", root_path %></li>
 
-    <% if current_user %>
-      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <li><%= link_to "Edit", edit_user_registration_path, method: :get %></li>
-      <div class='btn-group pull-right right-nav'>
-         <button type="button" class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
-           <span class="caret"></span>
-           <span clas="sr-only">Admin</span>
-         </button>
-      </div>
-    <% else %>
-      <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <li><%= link_to "Sign In", new_user_session_path %></li>
-    <% end %>
-
-  </ul>
-
-  <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
-    </div>
-  <% elsif flash[:error] %>
-    <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:error] %>
-    </div>
-  <% elsif flash[:alert] %>
-    <div class="alert">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
-
-  <%= yield %>
-
-</div>
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +12,6 @@
   <%= render 'layouts/header' %>
 </header>
 <%= yield %>
->>>>>>> master
 
 </body>
 </html>
