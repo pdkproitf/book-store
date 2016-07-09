@@ -2,36 +2,36 @@
   &nbsp;&nbsp;
   <span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
   <div class="clearfix"></div>
-  <form>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-        <input type="text" class="form-control" id="login_username" placeholder="Email">
-      </div>
-      <span class="help-block has-error" id="email-error"></span>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div>
-      <span class="help-block has-error" id="password-error"></span>
+    <span class="help-block has-error" id="email-error"></span>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
     </div>
-    <button type="button" id="login_btn" class="btn btn-primary btn-block" data-loading-text="Signing In....">Login</button>
-    <div class="clearfix"></div>
-    <div class="login-modal-footer">
-      <div class="row">
-        <div class="col-xs-8 col-sm-8 col-md-8">
-          <i class="fa fa-lock"></i>
-          <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+    <span class="help-block has-error" id="password-error"></span>
+  </div>
+  <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
+  <div class="clearfix"></div>
+  <div class="login-modal-footer">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <i class="fa fa-lock"></i>
+        <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
 
-        </div>
+      </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <i class="fa fa-check"></i>
-          <a href="javascript:;" class="signup-tab"> Sign Up </a>
-        </div>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <i class="fa fa-check"></i>
+        <a href="javascript:;" class="signup-tab"> Sign Up </a>
       </div>
     </div>
-  </form>
+  </div>
+  <% end %>
 </div>
