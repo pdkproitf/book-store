@@ -49,8 +49,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'mocha'
-  gem 'factory_girl_rails'
   gem 'faker'
+  gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'email_spec'
 end
 #fo heroku
 gem 'rails_12factor', group: :production
