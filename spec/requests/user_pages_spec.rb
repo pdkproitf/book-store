@@ -14,7 +14,7 @@ describe 'User page' do
 
         click_button "Sign up"
       end
-      it "allows new users to register with an email address and password" do
+      it "ridirect the previous page" do
 
 
         expect(page).to have_content("A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.")
