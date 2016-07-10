@@ -10,6 +10,9 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @book_list = Book.books_of_category(@book.category_id,@book.id)
+    @publish = Publish.find(@book.publish_id)
+    @category = Category.find(@book.category_id)
   end
 
   # GET /books/new

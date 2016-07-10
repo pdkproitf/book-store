@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :category
   belongs_to :publish
+  has_many :comments, dependent: :destroy
   validates :title, presence: true,
                     length: { maximum: 500 }
   validates :cost, presence:true,
@@ -17,8 +18,14 @@ class Book < ActiveRecord::Base
   validates :pages, presence: true,
                           numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
- def self.book_list(page)
-  @book = Book.paginate(:page => page, :per_page => 12)
- end
+  PER_PAGE = 12
+
+  def self.book_list(page)
+    @book = Book.paginate(:page => page, :per_page => PER_PAGE)
+  end
+
+  def self.books_of_category(category_id,book_id)
+    Book.where(category_id: category_id).where.not(id: book_id)
+  end
 
 end

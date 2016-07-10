@@ -1508,13 +1508,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
   color: #1abc9c;
 }
 /* line 1, /home/pdkpro/Desktop/RubyProject/BookStore_ruby/app/assets/stylesheets/scaffolds.scss */
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
 /* line 9, /home/pdkpro/Desktop/RubyProject/BookStore_ruby/app/assets/stylesheets/scaffolds.scss */
 p, ol, ul, td {
