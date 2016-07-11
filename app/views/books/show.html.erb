@@ -13,7 +13,7 @@
                   <img src="<%= book.photo %>" class="recent-thumb" alt="">
                   <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
                   <div class="product-sidebar-price">
-                  <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+                    <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
                   </div>
                </div>
               <% end %>
