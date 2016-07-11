@@ -19,14 +19,3 @@
   }
 });
 </script>
-<!-- =begin
-$('desc_comment').keydown(function(e) {
-    if(e.keyCode == 13){
-      alert("enter");
-      var d = {desc: (this).value};
-      $.ajax({
-       url: "<%= book_comments_path(@book) %>",
-       type: "POST",
-       data: { comment: d}
-     });
- -->
