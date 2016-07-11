@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :comment do
     user_id { Faker::Number.number(2) }
     book_id { Faker::Number.number(2) }
-    desc { Faker::Lorem.word }
+    desc { Faker::StarWars.quote }
     date { Faker::Time.backward(5, :evening) }
   end
 

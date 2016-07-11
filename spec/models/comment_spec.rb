@@ -50,4 +50,9 @@ RSpec.describe Comment, type: :model do
       it { expect(comment.date).not_to be_nil }
     end
   end
+
+  describe 'sossiation' do
+    it { expect(comment).to belong_to(:book) }
+    it { expect(comment).to belong_to(:user) }
+  end
 end

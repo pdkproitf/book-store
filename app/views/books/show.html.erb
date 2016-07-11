@@ -7,17 +7,17 @@
       <div class="col-md-4">
         <div class="single-sidebar">
           <h2 class="sidebar-title">RELATED PRODUCTS</h2>
-            <% unless @book.nil? %>
-              <% @books.each do |book| %>
-                <div class="thubmnail-recent">
-                  <img src="<%= book.photo %>" class="recent-thumb" alt="">
-                  <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
-                  <div class="product-sidebar-price">
-                    <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
-                  </div>
-               </div>
-              <% end %>
-            <% end %>
+          <% unless @book.nil? %>
+          <% @books.each do |book| %>
+          <div class="thubmnail-recent">
+            <img src="<%= book.photo %>" class="recent-thumb" alt="">
+            <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
+            <div class="product-sidebar-price">
+              <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
             </div>
 
             <div class="col-sm-6">
-              <div class="product-inner">
+              <div >
                 <h2 class="product-name"><%= @book.title %></h2>
                 <div class="product-inner-price">
                   <ins>$<%= @book.cost - @book.cost * @book.sale %></ins> <del>$<%= @book.cost %></del>
@@ -58,19 +58,17 @@
 
                 <div role="tabpanel">
                   <ul class="product-tab" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
+                    <li role="presentation" class="active"><a href="#desciption" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                    <li role="presentation"><a href="#comment" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
                   </ul>
                   <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <div role="tabpanel" class="tab-pane fade in active" id="desciption">
                       <h2> Introduce Book </h2>
                       <p> <%= @book.content %> </p>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                    <div role="tabpanel" class="tab-pane fade" id="comment">
                       <h2>Reviews</h2>
                       <div class="submit-review">
-                        <p><label for="name">Name</label> <input name="name" type="text"></p>
-                        <p><label for="email">Email</label> <input name="email" type="email"></p>
                         <div class="rating-chooser">
                           <p>Your rating</p>
                           <div class="rating-wrap-post">
@@ -81,12 +79,13 @@
                             <i class="fa fa-star"></i>
                           </div>
                         </div>
-                        <p><label for="review">Your
-                          <textarea name="review" id="" cols="30" rows="10"></textarea>
-                        </p>
-                        <p><input type="submit" value="Submit"></p>
+                        <div id="commented">
+                          <%= render partial: @book.comments %>
+                        </div>
+                        <div>
+                          <%= render 'comments/form' %>
+                        </div>
                       </div>
-
                     </div>
                   </div>
 
