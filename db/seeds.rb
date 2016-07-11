@@ -17,20 +17,15 @@
 
 12.times do
   category = FactoryGirl.build(:category)
-  unless Category.find_by_name(category.name)
-    @category.push(Category.create(name: category.name).id)
-  end
+  @category.push(Category.find_or_create_by(name: category.name).id)
 end
 
-i = 0
 10.times do
   publish = FactoryGirl.build(:publish)
-  next unless Publish.find_by_name(publish.name)
-  @publish = Publish.create(name: publish.name)
-  10.times do
-    i = 0 if i >= @category.size
+  @publish = Publish.find_or_create_by(name: publish.name)
+  @category.size.times do |index|
     book = FactoryGirl.build(:book)
-    Book.create(category_id: @category[i],
+    Book.create(category_id: @category[index],
                 title: book.title,
                 author: book.author,
                 publish_id: @publish.id,
@@ -42,6 +37,5 @@ i = 0
                 size: book.size,
                 pages: book.pages,
                 date: book.date)
-    i + i
   end
 end

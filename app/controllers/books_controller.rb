@@ -10,9 +10,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @book_list = Book.books_of_category(@book.category_id, @book.id)
-    @publish = Publish.find(@book.publish_id)
-    @category = Category.find(@book.category_id)
+    @books = @book.category.books.where.not(id: @book.to_param).limit(8)
   end
 
   # GET /books/new
