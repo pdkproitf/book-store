@@ -24,8 +24,4 @@ class Book < ActiveRecord::Base
     @book = Book.paginate(:page => page, :per_page => PER_PAGE)
   end
 
-  def self.books_of_category(category_id,book_id)
-    Book.where(category_id: category_id).where.not(id: book_id)
-  end
-
 end

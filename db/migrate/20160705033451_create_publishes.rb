@@ -1,3 +1,4 @@
+# migrate
 class CreatePublishes < ActiveRecord::Migration
   def change
     create_table :publishes do |t|
