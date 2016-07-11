@@ -5,17 +5,17 @@ describe 'User registration' do
   let(:user_password) { 'registration_test_password' }
 
   before :each do
-    visit new_user_registration_path
+    visit '/users/sign_up'
 
-    fill_in('user_email', with: user_email, :match => :prefer_exact)
-    fill_in('user_password', with: user_password, :match => :prefer_exact)
-    fill_in('user_password_confirmation', with: user_password, :match => :prefer_exact)
+    fill_in('Email', with: user_email, :match => :prefer_exact)
+    fill_in('Password', with: user_password, :match => :prefer_exact)
+    fill_in('Password confirmation', with: user_password, :match => :prefer_exact)
 
     click_button 'Sign up'
   end
 
   it "shows message about confirmation email" do
-    expect(page).to have_content("A message with a confirmation link has been sent to your email address. Please open the link to activate your account.")
+    expect(page).to have_content("A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.")
   end
 
   describe "confirmation email" do
@@ -26,11 +26,15 @@ describe 'User registration' do
     include EmailSpec::Helpers
     include EmailSpec::Matchers
 
+    before(:all) do
+      @email = UserMailer.create_signup("registration_test_user@example.org", "Jojo Binks")
+    end
+
     # open the most recent email sent to user_email
     subject { open_email(user_email) }
 
     # Verify email details
-    it { is_expected.to deliver_to(user_email) }
+    it { expect(@email).to deliver_to(user_email) }
     it { is_expected.to have_body_text(/You can confirm your account/) }
     it { is_expected.to have_body_text(/users\/confirmation\?confirmation/) }
     it { is_expected.to have_subject(/Confirmation instructions/) }

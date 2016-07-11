@@ -8,6 +8,8 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'factory_girl'
 require 'capybara/rspec'
+require "email_spec"
+require "email_spec/rspec"
 
 include Warden::Test::Helpers
 Warden.test_mode!
