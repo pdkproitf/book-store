@@ -1,33 +1,32 @@
-<%= form_for([@book, @book.comments.build]) do |f| %>
-<% if @comment.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-  <ul>
-    <% @comment.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <%= f.label :user_id %><br>
-  <%= f.number_field :user_id %>
-</div>
-<div class="field">
-  <%= f.label :book_id %><br>
-  <%= f.number_field :book_id %>
-</div>
-<div class="field">
-  <%= f.label :desc %><br>
-  <%= f.text_area :desc %>
-</div>
-<div class="field">
-  <%= f.label :date %><br>
-  <%= f.date_select :date %>
-</div>
-<div class="actions">
+<%= form_for([@book, @book.comments.build], remote: true) do |f| %>
+<p>
+  <label for="review">Your
+    <%= f.text_area :desc, id: "desc_comment" %>
+ </p>
+ <div class="actions">
   <%= f.submit %>
 </div>
 <% end %>
+<script type="text/javascript">
+ $('#desc_comment').keypress(function(e) {
+  if (e.which == "13") {
+    var d =  {desc: (this).value};
+    $.ajax({
+      url: "<%= book_comments_path(@book) %>",
+      type: "POST",
+      data: { comment: d}
+     })
+  }
+});
+</script>
+<!-- =begin
+$('desc_comment').keydown(function(e) {
+    if(e.keyCode == 13){
+      alert("enter");
+      var d = {desc: (this).value};
+      $.ajax({
+       url: "<%= book_comments_path(@book) %>",
+       type: "POST",
+       data: { comment: d}
+     });
+ -->

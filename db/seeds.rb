@@ -25,7 +25,7 @@ end
   @publish = Publish.find_or_create_by(name: publish.name)
   @category.size.times do |index|
     book = FactoryGirl.build(:book)
-    Book.create(category_id: @category[index],
+    @book = Book.create(category_id: @category[index],
                 title: book.title,
                 author: book.author,
                 publish_id: @publish.id,
@@ -37,5 +37,14 @@ end
                 size: book.size,
                 pages: book.pages,
                 date: book.date)
+    10.times do
+      comment = FactoryGirl.build(:comment)
+      Comment.create(
+        user_id: 1,
+        book_id: @book.id,
+        desc: comment.desc,
+        date: comment.date
+      )
+    end
   end
 end
