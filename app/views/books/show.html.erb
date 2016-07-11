@@ -7,17 +7,17 @@
       <div class="col-md-4">
         <div class="single-sidebar">
           <h2 class="sidebar-title">RELATED PRODUCTS</h2>
-          <% if !@book.nil? %>
-            <% @book_list.each do |book| %>
-              <div class="thubmnail-recent">
-                <img src="<%= book.photo %>" class="recent-thumb" alt="">
-                <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
-                <div class="product-sidebar-price">
-                  <ins>$<%= book.cost - book.cost * book.sale %></ins> <del>$<%= book.cost %></del>
-                </div>
-              </div>
+            <% unless @book.nil? %>
+              <% @books.each do |book| %>
+                <div class="thubmnail-recent">
+                  <img src="<%= book.photo %>" class="recent-thumb" alt="">
+                  <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
+                  <div class="product-sidebar-price">
+                    <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+                  </div>
+               </div>
+              <% end %>
             <% end %>
-          <% end %>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
         <div class="product-content-right">
           <div class="product-breadcroumb">
             <a href="#">Home</a>
-            <a href="<%= category_path(@category) %>"><%=@category.name %></a>
+            <a href="<%= category_path(@book.category) %>"><%=@book.category.name %></a>
             <a href="<%= book_path(@book) %>""> <%= @book.title %> </a>
           </div>
 
@@ -53,7 +53,7 @@
                 </form>
 
                 <div class="product-inner-category">
-                  <p>Category: <a href=""> <%= @category.name%> </a></p>
+                  <p>Category: <a href=""> <%= @book.category.name%> </a></p>
                 </div>
 
                 <div role="tabpanel">
@@ -94,7 +94,6 @@
               </div>
             </div>
 
-
             <div class="related-products-wrapper">
               <h2 class="related-products-title">Details Book</h2>
               <table class="table table-bordered table-detail table-striped">
@@ -105,7 +104,7 @@
                   </tr>
                   <tr>
                     <td> Publisher </td>
-                    <td> <%= @publish.name %> </td>
+                    <td> <%= @book.publish.name %> </td>
                   </tr>
                   <tr>
                     <td> Shipping Weight </td>

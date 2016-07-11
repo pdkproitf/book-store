@@ -1,0 +1,10 @@
+<div class="review_<%=h comment.id %>">
+  <strong style="color: blue"><%= link_to "#{comment.user.profile.name }",user_profile_path(comment.user)%>:</strong>
+  <strong style="color: lightblue;font-size: 10px;"><%= comment.date %></strong>
+  <h data-html="true"><%= comment.desc %></h>
+
+    <%= link_to  time_order_comment_path(@time_order, comment, :format => :js),:remote => true, data: { confirm: 'Are you sure?' }, id: "delete", method: :delete  do %>
+      <img  src="/assets/DeleteRed.png" width="15px" height="15px">
+    <% end %>
+  <% end %>
+</div>
