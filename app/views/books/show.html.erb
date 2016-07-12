@@ -80,10 +80,14 @@
                           </div>
                         </div>
                         <div id="commented">
-                          <%= render partial: @book.comments %>
+                          <%= render partial: @book.comments.includes(:user) %>
                         </div>
                         <div>
-                          <%= render 'comments/form' %>
+                          <% if current_user.nil? %>
+                            <%= link_to "Login for comment", user_session_path() %>
+                          <% else %>
+                            <%= render 'comments/form' %>
+                          <% end %>
                         </div>
                       </div>
                     </div>
