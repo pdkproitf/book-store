@@ -14,6 +14,6 @@ RSpec.describe Publish, type: :model do
   end
 
   describe "association" do
-    it { expect(@publish).to have_many(:books).dependent(:destroy) }
+    it { expect(@publish).to have_many(:books) }
   end
 end
