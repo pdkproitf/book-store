@@ -1,31 +1,33 @@
 require 'rails_helper'
 
+describe 'User registration' do
+  describe 'Sign up page' do
 
-describe 'User page' do
-
-  subject { page }
-
-  describe "signup" do
+    subject { page }
     before { visit '/users/sign_up' }
     let(:submit) { "Sign up" }
+    let(:user) { FactoryGirl.build(:user) }
 
     describe "with invalid information" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
 
-      it "error if email exist" do
-        within 'ul li' do
-          expect(page).to have_content('2 errors prohibited this user from being saved:')
+      it "return Sign up Page" do
+        click_button submit
+        within 'h2' do
+          expect(page).to have_content('Sign up')
         end
       end
     end
 
     describe "with valid information" do
       before do
-        fill_in("Email", with: 'aaaa12@gmail.com', :match => :prefer_exact)
-        fill_in("Password", with: 'iloveyou', :match => :prefer_exact)
-        fill_in("Password confirmation", with: 'iloveyou', :match => :prefer_exact)
+        visit new_user_registration_path
+
+        fill_in 'user_email', with: user.email
+        fill_in 'user_password', with: user.password
+        fill_in 'user_password_confirmation', with: user.password
       end
 
       it "should create a user" do
@@ -38,12 +40,5 @@ describe 'User page' do
       end
     end
   end
-
-  describe 'sign_in page' do
-
-  end
-
-  describe 'forgot_password page' do
-
-  end
 end
+

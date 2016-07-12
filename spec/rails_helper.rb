@@ -8,8 +8,8 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'factory_girl'
 require 'capybara/rspec'
-require "email_spec"
-require "email_spec/rspec"
+require "action_mailer"
+require 'capybara/email/rspec'
 
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -43,8 +43,14 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
   config.include Capybara::DSL
+  config.include Capybara::Email::DSL
+
   include Warden::Test::Helpers
   Warden.test_mode!
+
+  #config.include Devise::TestHelpers, :type => :controller
+  #config.include Warden::Test::Helpers, :type => :acceptance
+  #config.after(:each, :type => :acceptance) { Warden.test_reset! }
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

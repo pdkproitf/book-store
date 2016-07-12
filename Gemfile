@@ -53,6 +53,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'capybara-email'
 end
 #fo heroku
 gem 'rails_12factor', group: :production
