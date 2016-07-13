@@ -8,15 +8,15 @@
         <div class="single-sidebar">
           <h2 class="sidebar-title">RELATED PRODUCTS</h2>
           <% unless @book.nil? %>
-          <% @books.each do |book| %>
-          <div class="thubmnail-recent">
-            <img src="<%= book.photo %>" class="recent-thumb" alt="">
-            <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
-            <div class="product-sidebar-price">
-              <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+            <% @books.each do |book| %>
+            <div class="thubmnail-recent">
+              <img src="<%= book.photo %>" class="recent-thumb" alt="">
+              <h2><a href=<%= book_path(book) %>> <%= book.title %> </a></h2>
+              <div class="product-sidebar-price">
+                <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+              </div>
             </div>
-          </div>
-          <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>
