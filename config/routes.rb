@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+
+  #devise_for :users
   resources :books do
     resources :comments
   end
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
+  devise_for :users, :controllers => { passwords: 'passwords' }
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
