@@ -1,5 +1,5 @@
 <div class="review_<%=h comment.id %>">
-<strong style="color: blue"><%= "#{comment.user.email }" %> </strong>
+<strong style="color: blue"><%= "#{ comment.user.email }" %> </strong>
   <strong style="color: lightblue;font-size: 10px;"><%= comment.date %></strong>
   <h data-html="true"><%= comment.desc %></h>
   <%= link_to  book_comment_path(@book, comment, :format => :js),:remote => true, data: { confirm: 'Are you sure?' }, id: "delete", method: :delete  do %>
