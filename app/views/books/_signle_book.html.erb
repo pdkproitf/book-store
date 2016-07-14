@@ -23,7 +23,7 @@
     </div>
 
     <div class="product-carousel-price">
-      <ins>$<%= (book.cost - book.cost * book.sale).round(2) %></ins> <del>$<%= book.cost %></del>
+      <ins>$<%= price(book) %></ins> <del>$<%= book.cost %></del>
     </div>
 
   </div>
