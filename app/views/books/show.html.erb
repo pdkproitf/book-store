@@ -83,7 +83,7 @@
                         </div>
                         <div>
                           <% if current_user.nil? %>
-                            <%= link_to "Login for comment", user_session_path() %>
+                            <a data-toggle="modal" href="#login_form"><i class="fa fa-user"></i> Login for comment</a>
                           <% else %>
                             <%= render 'comments/form' %>
                           <% end %>
