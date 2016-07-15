@@ -9,6 +9,8 @@ class Book < ActiveRecord::Base
                    numericality: { greater_than_or_equal_to: 1 }
   validates :sale, presence: true,
                    numericality: { greater_than_or_equal_to: 0, is_less_than_or_equal_to: 0.75 }
+  validates :weight, presence: true,
+                   numericality: { greater_than_or_equal_to: 10 }
   validates :photo, presence: true
   validates :content, presence: true
   validates :category_id, presence: true,
