@@ -1,27 +1,72 @@
 
-<h2>Log in</h2>
+<div class="content-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-head-line">Please Login To Enter </h4>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
     </div>
-  <% end -%>
+    <div class="row">
+      <div class="col-md-6">
+        <h4> Login with <strong>Your Account  :</strong></h4>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <label>Enter Email ID : </label>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+        <div class="form-group">
+          <label>Enter Password :  </label>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <% end -%>
+
+        <hr />
+        <div class="actions">
+          <%= f.submit "Log in", class: "btn btn-primary btn-lg" %>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <h4> Login with facebook <strong> / </strong>Google :</h4>
+        <br />
+        <a href="index.html" class="btn btn-social btn-facebook">
+          <i class="fa fa-facebook"></i>&nbsp; Facebook Account</a>
+          &nbsp;OR&nbsp;
+          <a href="index.html" class="btn btn-social btn-google">
+            <i class="fa fa-google-plus"></i>&nbsp; Google Account</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <%= render "devise/shared/links" %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#new_user").validate({
+        rules: {
+            user_email: {
+                required: true,
+                minlength: 8
+            },
+            pass: "required"
+        },
+        messages: {
+            user_email: {
+                required: "Please provide your Login",
+                minlength: "Your Login must be at least 8 characters"
+            },
+            user_password: "Please provide your password"
+        }
+    });
+});
+</script>

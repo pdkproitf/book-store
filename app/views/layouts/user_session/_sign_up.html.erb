@@ -3,44 +3,48 @@
   <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
   <div class="clearfix"></div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
-      </div>
-      <span class="help-block has-error" data-error='0' id="username-error"></span>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-at"></i></div>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
-      </div>
-      <span class="help-block has-error" data-error='0' id="remail-error"></span>
+    <span class="help-block has-error" data-error='0' id="username-error"></span>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-at"></i></div>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
     </div>
+    <span class="help-block has-error" data-error='0' id="remail-error"></span>
+  </div>
 
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-at"></i></div>
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
-      </div>
-      <span class="help-block has-error" data-error='0' id="remail-error"></span>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-at"></i></div>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
     </div>
-    <%= f.submit "Register", class: "btn btn-primary btn-block" %>
-    <div class="clearfix"></div>
-    <div class="login-modal-footer">
-      <div class="row">
-        <div class="col-xs-8 col-sm-8 col-md-8">
-          <i class="fa fa-lock"></i>
-          <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+    <span class="help-block has-error" data-error='0' id="remail-error"></span>
+  </div>
+  <%= f.submit "Register", class: "btn btn-primary btn-block" %>
+  <div class="clearfix"></div>
+  <div class="login-modal-footer">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <i class="fa fa-lock"></i>
+        <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
 
-        </div>
+      </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <i class="fa fa-check"></i>
-          <a href="javascript:;" class="signin-tab"> Sign In </a>
-        </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <i class="fa fa-check"></i>
+        <a href="javascript:;" class="signin-tab"> Sign Up </a>
+      </div>
+
+      <div class="col-md-12">
+        <i class="fa fa-lock"></i>
+        <%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path %>
       </div>
     </div>
+  </div>
   <% end %>
 </div>

@@ -48,9 +48,15 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
   gem 'pry-rails'
+  gem 'capybara'
+  gem 'mocha'
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'capybara-email'
 end
-
-#for heroku
+#fo heroku
 gem 'rails_12factor', group: :production
 
 group :development do

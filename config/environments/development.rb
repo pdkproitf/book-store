@@ -40,14 +40,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = { :host => 'book-store-ruby.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    user_name:      ENV['GMAIL_SMTP_USER'],
-    password:       ENV['GMAIL_SMTP_PASSWORD'],
+    user_name:      'kiemsong33@gmail.com',
+    password:       'nguthang123',
     domain:         'gmail.com',
     address:       'smtp.gmail.com',
     port:          '587',
