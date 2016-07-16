@@ -50,3 +50,23 @@
     </div>
 
     <%= render "devise/shared/links" %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#new_user").validate({
+        rules: {
+            user_email: {
+                required: true,
+                minlength: 8
+            },
+            pass: "required"
+        },
+        messages: {
+            user_email: {
+                required: "Please provide your Login",
+                minlength: "Your Login must be at least 8 characters"
+            },
+            user_password: "Please provide your password"
+        }
+    });
+});
+</script>
