@@ -48,11 +48,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
   gem 'pry-rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
   gem 'capybara'
   gem 'mocha'
-  gem 'faker'
   gem 'guard-rspec'
-  gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara-email'
 end
