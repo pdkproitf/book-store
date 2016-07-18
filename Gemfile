@@ -52,9 +52,12 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'mocha'
+  gem 'guard-rspec'
+  gem 'email_spec'
+  gem 'capybara-email'
 end
-
-#for heroku
+#fo heroku
 gem 'rails_12factor', group: :production
 
 group :development do

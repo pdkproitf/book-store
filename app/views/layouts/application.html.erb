@@ -8,27 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <%= render 'layouts/header' %>
+  <%= render 'layouts/header' %>
 
-    <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
-    </div>
-    <% elsif flash[:error] %>
-    <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:error] %>
-    </div>
-    <% elsif flash[:alert] %>
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-    </div>
-    <% end %>
-
-    <%= yield %>
-  </header>
+  <%= yield %>
 </body>
 </html>
