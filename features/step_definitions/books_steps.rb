@@ -36,7 +36,7 @@ Then(/^I should see book titled "([^"]*)" image "([^"]*)" with cost (\d+) sale (
   expect(page).to have_content(@book.date)
 end
 # ****************************new**********************************************
-Given(/^I am on book_path "([^"]*)" with category_id (\d+) publish_id (\d+)$/) do |page_path, category, publish|
+Given(/^I am on book path "([^"]*)" with category_id (\d+) publish_id (\d+)$/) do |page_path, category, publish|
   @category = FactoryGirl.create(:category, id: category)
   @publish = FactoryGirl.create(:publish, id: publish)
   visit page_path
@@ -62,5 +62,28 @@ When /^I press "(.+)"$/ do |button|
 end
 
 Then /^I should see "([^\"]*)"$/ do |text|
+  page.has_content? text
+end
+# *******************************update********************************************
+Given(/^I am on edit book path with category_id (\d+) publish_id (\d+)$/) do |category, publish|
+  @category = FactoryGirl.create(:category, id: category)
+  @publish = FactoryGirl.create(:publish, id: publish)
+  @book = FactoryGirl.create(:book)
+  visit edit_book_path(@book)
+end
+
+When(/^I press update_book_button "([^"]*)"$/) do |button|
+  click_button(button)
+end
+
+Then(/^I should see content "([^"]*)"$/) do |text|
+  page.has_content? text
+end
+# **************************destroy************************************************
+When(/^I visit destroy_book_link$/) do
+  visit book_path(@book)
+end
+
+Then(/^I should see destroy_book_content "([^"]*)"$/) do |text|
   page.has_content? text
 end
